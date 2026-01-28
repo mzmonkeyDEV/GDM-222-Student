@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Solution
 {
 
-    public class OOPItem : MonoBehaviour
+    public class OOPItem : Identity
     {
 
        

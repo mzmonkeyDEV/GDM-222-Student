@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Solution
 {
 
-    public class OOPPlayer : MonoBehaviour
+    public class OOPPlayer : Character
     {
 
         public void Start()

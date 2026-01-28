@@ -19,11 +19,14 @@ namespace Solution
 
         public virtual void Move(Vector2 direction)
         {
-            
+            positionX = (int)(positionX+ direction.x);
+            positionY = (int)(positionY+ direction.y);
+
+            transform.position = new Vector3(positionX,positionY,0);
            
 
         }
-        // hasPlacement ¤×¹¤èÒ true ¶éÒÁÕ¡ÒÃÇÒ§ÍÐäÃäÇéº¹ map ·ÕèµÓáË¹è§ x,y
+        // hasPlacement ï¿½×¹ï¿½ï¿½ï¿½ true ï¿½ï¿½ï¿½ï¿½Õ¡ï¿½ï¿½ï¿½Ò§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½éº¹ map ï¿½ï¿½ï¿½ï¿½ï¿½Ë¹ï¿½ x,y
         public bool HasPlacement(int x, int y)
         {
             return false;

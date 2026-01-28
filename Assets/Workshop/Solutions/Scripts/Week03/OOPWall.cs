@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Solution
 {
 
-    public class OOPWall : MonoBehaviour
+    public class OOPWall : Identity
     {
         public int Damage;
         public bool IsIceWall;

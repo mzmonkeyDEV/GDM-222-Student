@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Solution
 {
-    public class OOPExit : MonoBehaviour
+    public class OOPExit : Identity
     {
        
     }
