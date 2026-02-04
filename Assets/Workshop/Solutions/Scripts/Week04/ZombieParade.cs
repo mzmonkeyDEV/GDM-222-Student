@@ -40,7 +40,7 @@ namespace Solution
         IEnumerator MoveParade()
         {      
             yield return null;
-            Parade.AddFirst(this.gameObject);
+     
             //0. ���ҧ��ǧ�
             while (isAlive)
             {
