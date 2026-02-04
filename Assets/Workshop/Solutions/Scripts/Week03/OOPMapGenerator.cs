@@ -21,6 +21,7 @@ namespace Solution
         public GameObject[] wallsPrefab;
         public GameObject[] demonWallsPrefab;
         public GameObject[] itemsPrefab;
+        public GameObject[] enemyPrefab;
 
         [Header("Set Transform")]
         public Transform floorParent;
