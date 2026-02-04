@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -19,14 +20,26 @@ namespace Solution
 
         public virtual void Move(Vector2 direction)
         {
-            
-           
+            int toX = (int)(positionX+ direction.x);
+            int toY = (int)(positionY+ direction.y);
 
+            if(HasPlacement(toX, toY)){
+                Debug.Log("can't move");
+                Identity identity = mapGenerator.GetMapData(toX,toY);
+                identity.Hit(this);
+            }
+            else
+            {
+                mapGenerator.UpdatePositionIdenity(this,toX,toY);
+                TakeDamage(1);
+            }
+           
         }
-        // hasPlacement ¤×¹¤èÒ true ¶éÒÁÕ¡ÒÃÇÒ§ÍÐäÃäÇéº¹ map ·ÕèµÓáË¹è§ x,y
+        // hasPlacement ï¿½×¹ï¿½ï¿½ï¿½ true ï¿½ï¿½ï¿½ï¿½Õ¡ï¿½ï¿½ï¿½Ò§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½éº¹ map ï¿½ï¿½ï¿½ï¿½ï¿½Ë¹ï¿½ x,y
         public bool HasPlacement(int x, int y)
         {
-            return false;
+            var cell = mapGenerator.GetMapData(x,y);
+            return cell != null;
         }
         
 

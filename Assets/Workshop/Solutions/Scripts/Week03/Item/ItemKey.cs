@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Solution
 {
-    public class ItemKey : MonoBehaviour
+    public class ItemKey : ItemData
     {
         
 

@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e26aa2d799f404bbcbb7b6dde5fe03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Potion
   positionX: 0
   positionY: 0
   mapGenerator: {fileID: 0}
-  itemData: {fileID: 11400000, guid: d68646830eadd7a4b85881da0c581126, type: 2}
+  itemData: {fileID: 11400000, guid: c55083a94b56699488d97223e45f1b66, type: 2}
