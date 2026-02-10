@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4314285243807817638}
   - component: {fileID: 5267956022897430819}
   - component: {fileID: 5615206909734415387}
+  - component: {fileID: 7472937247535290411}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -52,6 +53,9 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -73,6 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
@@ -104,4 +109,24 @@ MonoBehaviour:
   positionY: 0
   mapGenerator: {fileID: 0}
   energy: 20
+  maxEnergy: 0
   AttackPoint: 10
+  spriteRenderer: {fileID: 0}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  damagedColor1: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  damagedColor2: {r: 1, g: 0, b: 0, a: 1}
+  inventory: {fileID: 7472937247535290411}
+  Gold: 0
+  KeyItemFireStorm: {fileID: 11400000, guid: 2f6215b804ab4c9439602ad05553744d, type: 2}
+--- !u!114 &7472937247535290411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2975489352503432100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d5c92ad1813984d93deeb2cd09b532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Solution.Inventory

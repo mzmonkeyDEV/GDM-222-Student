@@ -95,6 +95,7 @@ Transform:
   - {fileID: 2017854439703414493}
   - {fileID: 5733433177445407064}
   - {fileID: 962238967185088404}
+  - {fileID: 2828033290565126977}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8365133027701863277
@@ -109,36 +110,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ea12672d43a5547bca6d7ccbe75775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  X: 8
-  Y: 8
-  player: {fileID: 0}
+  Rows: 8
+  Cols: 8
+  player: {fileID: 2975489352503432100, guid: 4c033ef69eb269849bab9de975c465ed, type: 3}
   playerStartPos: {x: 0, y: 0}
-  Exit: {fileID: 0}
-  floorPrefab:
-  - {fileID: 106160, guid: 038998774947c4a8fa170d5b4492a7dd, type: 3}
-  - {fileID: 137908, guid: 41775b29042354678bcd58bb1a75871e, type: 3}
-  - {fileID: 125636, guid: 74398dca0c1f64f34aab8ba7bdb6c527, type: 3}
-  - {fileID: 177044, guid: ed4c829589732490894350b134530050, type: 3}
-  - {fileID: 109612, guid: 04993e7a7b0514f0c8857ff106529ce1, type: 3}
+  Exit: {fileID: 7025940495585331075, guid: 66e92acc836da4f41bdc3eb615f7c97b, type: 3}
+  floorsPrefab:
+  - {fileID: 8981274605333006497, guid: 93d0b3edf258c194ca8e4bdaedb3507d, type: 3}
+  - {fileID: 5525326628935868067, guid: 42ae0a1037f220c46be78186c07b001e, type: 3}
+  - {fileID: 4018252664251982846, guid: 0603b002125343345830af079f75689f, type: 3}
+  - {fileID: 6338718052967692477, guid: 4344d40571f47834fb66e2019c9b3176, type: 3}
+  - {fileID: 6447585732716477075, guid: fc041445e99b67f4398f47be2d0833ad, type: 3}
   - {fileID: 127736, guid: 4cdf8ac85eff446d0a8fefbdc8c6569f, type: 3}
   - {fileID: 110520, guid: 5535fd6cd705e4a79a1d5a4f114de5dc, type: 3}
   - {fileID: 110520, guid: c18e9692903814865aa9a855aaa66df5, type: 3}
-  wallPrefab:
-  - {fileID: 110520, guid: b1361c167057d93419e387f0e521b453, type: 3}
-  - {fileID: 110520, guid: 160d1ca5bdb308248a5ee74ad266bb23, type: 3}
-  - {fileID: 110520, guid: 20969559de7d2744bb44998e99ce9982, type: 3}
-  - {fileID: 110520, guid: 7cd8a1715bfab6c4d90c0fab66f9a28d, type: 3}
-  - {fileID: 110520, guid: 5d04ed77d9b2f084d95198c3d5054934, type: 3}
+  wallsPrefab:
+  - {fileID: 5291166318002269242, guid: 413c1aa8e8dffdd448102fbcf99aaf6d, type: 3}
+  - {fileID: 6505163485945331184, guid: 3f8f43eeb72c5ae4b95a6139f5d1a420, type: 3}
+  - {fileID: 5937509869307692887, guid: 96f67739f9f22924f820b5a0ab91eb89, type: 3}
+  - {fileID: 3622615748849206263, guid: 347cc57813f2183419694b9ac8245457, type: 3}
+  - {fileID: 7016356384876519341, guid: 01b14743625ff1d41a313afb6f779145, type: 3}
   - {fileID: 110520, guid: 41b95ddc38b31c54494887bffe170189, type: 3}
   - {fileID: 110520, guid: 8e340b745bf3d534d97def82977de0ad, type: 3}
   - {fileID: 110520, guid: e797d0509f378e74ca179da99e1f671a, type: 3}
-  itemPotionPrefab: {fileID: 6476303242912763235, guid: 76f2f38c664723b42aea03f157bcc7ae,
-    type: 3}
+  demonWallsPrefab:
+  - {fileID: 110520, guid: a0e1cbb2ed4ebe2438ddc619ee2fef83, type: 3}
+  - {fileID: 110520, guid: 0c33ad76486a7d9468826fa09c7942d0, type: 3}
+  itemsPrefab:
+  - {fileID: 6476303242912763235, guid: 86926da40248a04478456d108c6fae6d, type: 3}
+  - {fileID: 6476303242912763235, guid: 76f2f38c664723b42aea03f157bcc7ae, type: 3}
+  enemyPrefab:
+  - {fileID: 2719169275914464831, guid: 725ac0633002c9445955a206beafa7b2, type: 3}
   floorParent: {fileID: 2017854439703414493}
   wallParent: {fileID: 5733433177445407064}
   itemPotionParent: {fileID: 962238967185088404}
+  EnemyParent: {fileID: 2828033290565126977}
   obsatcleCount: 5
-  itemPotionCount: 2
+  itemPotionCount: 5
+  enemyCount: 5
+  EnemysOnMap: []
+  playerScript: {fileID: 0}
+  exitScript: {fileID: 0}
+  empty: 
+  demonWall: demonWall
+  potion: potion
+  bonuesPotion: bonuesPotion
+  exit: exit
+  playerOnMap: player
 --- !u!1 &7680843978735096706
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +180,37 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7680843978735096706}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2592881412648572649}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9062376329940733478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2828033290565126977}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2828033290565126977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9062376329940733478}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}

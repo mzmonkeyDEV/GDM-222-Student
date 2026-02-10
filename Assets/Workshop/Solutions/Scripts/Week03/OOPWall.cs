@@ -8,16 +8,26 @@ namespace Solution
         public int Damage;
         public bool IsIceWall;
 
-        public override void Hit(Identity hitBy)
+        private void SetUP()
         {
-            base.Hit(hitBy);
-            if(hitBy is OOPPlayer)
+            IsIceWall = Random.Range(0, 100) < 20 ? true : false;
+            if (IsIceWall)
             {
-                OOPPlayer p = hitBy as OOPPlayer;
-                p.TakeDamage(Damage);
-                Debug.Log("Hit wall");
+                GetComponent<SpriteRenderer>().color = Color.blue;
             }
         }
-        
+        public override void Hit(Identity hitBy)
+        {
+            if (IsIceWall)
+            {
+                mapGenerator.playerScript.TakeDamage(Damage, IsIceWall);
+            }
+            else
+            {
+                mapGenerator.playerScript.TakeDamage(Damage);
+            }
+            mapGenerator.mapdata[positionX, positionY] = null;
+            Destroy(gameObject);
+        }
     }
 }

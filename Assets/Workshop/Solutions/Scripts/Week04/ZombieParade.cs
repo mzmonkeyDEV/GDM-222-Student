@@ -40,9 +40,61 @@ namespace Solution
         IEnumerator MoveParade()
         {      
             //0. สร้างหัวงู
+            Parade.AddFirst(this.gameObject);
             while (isAlive)
             {
-                
+                // 1. ดึงส่วนแรกของงูออกมา
+                LinkedListNode<GameObject> firstNode = Parade.First;
+                GameObject firstPart = firstNode.Value;
+
+                // 2. ดึงส่วนสุดท้ายของงูออกมา
+                LinkedListNode<GameObject> lastNode = Parade.Last;
+                GameObject lastPart = lastNode.Value;
+             
+                // 3. ลบส่วนสุดท้ายออกจาก LinkedList
+                Parade.RemoveLast();
+
+                // 5. กำหนดตำแหน่งและทิศทางของส่วนที่ถูกย้ายมาใหม่
+                // ให้ไปอยู่ที่ตำแหน่งของส่วนหัวงู (ซึ่งเพิ่งเคลื่อนที่ไปเมื่อครู่)
+                int toX = 0;
+                int toY = 0;
+
+                bool isCollide = true;
+                int countTryToFind = 0;
+                while (isCollide == true || countTryToFind>10)
+                {
+                    moveDirection = RandomizeDirection();
+                    toX = (int)(firstPart.transform.position.x + moveDirection.x);
+                    toY = (int)(firstPart.transform.position.y + moveDirection.y);
+                    countTryToFind++;
+                    if (countTryToFind > 10) { 
+                        toX = positionX;
+                        toY = positionY;
+                    }
+                    isCollide = IsCollision(toX, toY);
+                }
+
+                //6. เคลื่อนที่
+                mapGenerator.mapdata[positionX, positionY] = null;
+                positionX = toX;
+                positionY = toY;
+                lastPart.transform.position = new Vector3(positionX, positionY, 0);
+                lastPart.GetComponent<SpriteRenderer>().flipX = moveDirection == Vector3.right;
+                mapGenerator.mapdata[positionX, positionY] = lastPart.GetComponent<Identity>();
+
+
+                // 7. เพิ่มส่วนนั้นกลับเข้าไปเป็นส่วนที่สองของ LinkedList
+                // (ซึ่งก็คือส่วนแรกของลำตัว)
+                Parade.AddFirst(lastNode);
+                // รอตามเวลาที่กำหนดก่อนการเคลื่อนที่ครั้งต่อไป
+                if (Parade.Count < SizeParade) {
+                    timer++;
+                    if (timer > 3)
+                    {
+                        Grow();
+                        timer = 0;
+                    }
+                }
                 yield return new WaitForSeconds(moveInterval);
             }
         }
@@ -59,7 +111,18 @@ namespace Solution
         // ฟังก์ชันสำหรับเพิ่มส่วนของงู (Grow)
         private void Grow()
         {
-           
+            GameObject newPart = Instantiate(bodyPrefab[0]);
+            // กำหนดตำแหน่งเริ่มต้นของส่วนใหม่ให้อยู่ที่เดียวกับส่วนสุดท้ายของงู
+            GameObject lastPart = Parade.Last.Value;
+            newPart.transform.position = lastPart.transform.position;
+            mapGenerator.PlaceObject( 
+                (int)newPart.transform.position.x, 
+                (int)newPart.transform.position.y,
+                newPart,
+                mapGenerator.EnemyParent);
+            //newPart.transform.rotation = lastPart.transform.rotation;
+            // เพิ่มส่วนใหม่เข้าไปใน Linked List
+            Parade.AddLast(newPart);
         }
 
     }
