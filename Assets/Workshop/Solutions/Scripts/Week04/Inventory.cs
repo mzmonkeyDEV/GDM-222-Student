@@ -1,34 +1,57 @@
 using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 
 namespace Solution {
     public class Inventory : MonoBehaviour
     {
+        public Dictionary<ItemData,int> inventory = new Dictionary<ItemData, int>();
 
-        // à¾ÔèÁäÍà·çÁ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         public void AddItem(ItemData item, int amount)
         {
-            
+            if (inventory.ContainsKey(item))
+            {
+                inventory[item] += amount;
+            }
+            else
+            {
+                inventory.Add(item,amount);
+            }
+            Debug.Log($"Added {amount} {item.ItemName} Total : {inventory[item]}");
         }
 
-        // ÅºäÍà·çÁ
+        // Åºï¿½ï¿½ï¿½ï¿½ï¿½
         public void UseItem(ItemData item, int amount)
         {
+            if (HasItem(item,amount))
+            {
+                inventory[item] -= amount;
+                if(inventory[item] <= 0)
+                {
+                    inventory.Remove(item);
+                    Debug.Log($"Removed {item.ItemName} from inventory");
+                }
+            }
+            else
+            {
+                Debug.Log("Cannot Remove" + item.ItemName);
+            }
             
         }
         public bool HasItem(ItemData item, int amount)
         {
-            //2. µÃÇ¨ÊÍºÇèÒÁÕäÍà·çÁ¹Õéã¹¤ÅÑ§ËÃ×ÍäÁè áÅÐÁÕ¨Ó¹Ç¹à¾ÕÂ§¾ÍËÃ×ÍäÁè
-            return true;
+            //2. ï¿½ï¿½Ç¨ï¿½Íºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã¹¤ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Õ¨Ó¹Ç¹ï¿½ï¿½Â§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            return inventory.ContainsKey(item) && inventory[item] >= amount;
         }
-        // µÃÇ¨ÊÍº¨Ó¹Ç¹äÍà·çÁ
+        // ï¿½ï¿½Ç¨ï¿½Íºï¿½Ó¹Ç¹ï¿½ï¿½ï¿½ï¿½ï¿½
         public int GetItemCount(ItemData item)
         {
            
             return 0;
         }
 
-        // áÊ´§ÃÒÂ¡ÒÃ·Ñé§ËÁ´ã¹¤ÅÑ§
+        // ï¿½Ê´ï¿½ï¿½ï¿½Â¡ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ã¹¤ï¿½Ñ§
         public void PrintInventory()
         {
            

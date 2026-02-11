@@ -15,7 +15,7 @@ namespace Assignment03
 
         public void LCT01_SyntaxLinkedList()
         {
-           // 1. สร้าง LinkedList ของประเภท string
+            // 1. สร้าง LinkedList ของประเภท string
             LinkedList<string> linkedList = new LinkedList<string>();
 
             // 2. เพิ่มข้อมูลที่ท้ายของ LinkedList
@@ -62,7 +62,7 @@ namespace Assignment03
         private void LCT01_PrintLinkedList(LinkedList<string> linkedList)
         {
             Debug.Log("LinkedList...");
-            foreach(var node in linkedList)
+            foreach (var node in linkedList)
             {
                 Debug.Log(node);
             }
@@ -70,12 +70,12 @@ namespace Assignment03
 
         public void LCT02_SyntaxHashTable()
         {
-            
+
             Hashtable hashtable = new Hashtable();
             //Key Value
-            hashtable.Add(1,"Apple");
-            hashtable.Add(2,"Banana");
-            hashtable.Add("bad-fruit","Rotten Tomato");
+            hashtable.Add(1, "Apple");
+            hashtable.Add(2, "Banana");
+            hashtable.Add("bad-fruit", "Rotten Tomato");
 
             string fruit1 = (string)hashtable[1];
             string fruit2 = (string)hashtable[2];
@@ -104,7 +104,7 @@ namespace Assignment03
         public void LCT02_PrintHashTable(Hashtable hashtable)
         {
             Debug.Log("table ...");
-            foreach(DictionaryEntry entry in hashtable)
+            foreach (DictionaryEntry entry in hashtable)
             {
                 Debug.Log($"Key: {entry.Key}, Value: {entry.Value}");
             }
@@ -112,7 +112,38 @@ namespace Assignment03
 
         public void LCT03_SyntaxDictionary()
         {
-            throw new System.NotImplementedException();
+            Dictionary<int, string> dict = new Dictionary<int, string>();
+
+            dict.Add(1, "Apple");
+            dict.Add(2, "Banana");
+            dict[3] = "dsfds";
+
+            LCT03_PrintDictionary(dict);
+
+            int keyToCheck = 1;
+            bool hasKey = dict.ContainsKey(keyToCheck);
+            Debug.Log($"has key {keyToCheck}: {hasKey}");
+            if (hasKey)
+            {
+                string value = dict[keyToCheck];
+                Debug.Log($"value of key {keyToCheck} ({value})");
+            }
+
+            Debug.Log($"All key in dict");
+            foreach (int key in dict.Keys)
+            {
+                Debug.Log(key);
+            }
+
+        }
+
+        private void LCT03_PrintDictionary(Dictionary<int, string> dict)
+        {
+            Debug.Log($"Dictionary has {dict.Count}");
+            foreach (KeyValuePair<int, string> kvp in dict)
+            {
+                Debug.Log($"Key: {kvp.Key}, Value: {kvp.Value}");
+            }
         }
 
         #endregion

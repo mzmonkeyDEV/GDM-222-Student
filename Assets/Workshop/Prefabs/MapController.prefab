@@ -151,6 +151,7 @@ MonoBehaviour:
   EnemysOnMap: []
   playerScript: {fileID: 0}
   exitScript: {fileID: 0}
+  wallScript: {fileID: 0}
   empty: 
   demonWall: demonWall
   potion: potion
