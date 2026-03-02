@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assignment05
+namespace Midterm
 {
     public interface IAssignment
     {

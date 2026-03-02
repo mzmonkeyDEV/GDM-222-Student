@@ -4,7 +4,7 @@ using NUnit.Framework;
 using UnityEngine;
 using Debug = AssignmentSystem.Services.AssignmentDebugConsole;
 
-namespace Assignment05
+namespace Midterm
 {
     public class FinalSolution : IAssignment
     {

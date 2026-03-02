@@ -1,18 +1,18 @@
-namespace Assignment05
+namespace Assignment06
 {
     public class AssignmentConfig
     {
         /// <summary>
         /// Name of the assignment.
         /// </summary>  
-        public const string AssignmentName = "Assignment 06 (Midterm 1)";
+        public const string AssignmentName = "Assignment 07";
 
         /// <summary>
         /// Description of the assignment.
         /// </summary>
-        public const string AssignmentDescription = "Midterm Exam 1 for GI262 Data Structure and Algorithm";
+        public const string AssignmentDescription = "Searching Algorithms in Game Development";
 
-        public const string AssignmentResourceID = "bu.2025.sem-1.gi262.as06";
+        public const string AssignmentResourceID = "bu.2025.sem-1.gi262.as07";
 
         /// <summary>
         /// Version of the assignment.
