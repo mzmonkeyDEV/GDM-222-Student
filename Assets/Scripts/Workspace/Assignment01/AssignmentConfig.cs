@@ -1,4 +1,4 @@
-namespace Assignment
+namespace Assignment01
 {
     public class AssignmentConfig
     {

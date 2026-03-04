@@ -1,4 +1,4 @@
-namespace Assignment.Core.Interfaces
+namespace Assignment01.Core.Interfaces
 {
     /// <summary>
     /// Interface for managing user credentials

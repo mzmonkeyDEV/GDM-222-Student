@@ -1,8 +1,8 @@
 using System;
-using Assignment.Core.Interfaces;
-using Assignment;
+using Assignment01.Core.Interfaces;
+using Assignment01;
 using UnityEngine;
-using Assignment.Core;
+using Assignment01.Core;
 
 namespace AssignmentSystem.Services
 {

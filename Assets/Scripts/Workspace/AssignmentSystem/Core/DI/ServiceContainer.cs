@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assignment.Core.DI
+namespace Assignment01.Core.DI
 {
     /// <summary>
     /// Simple dependency injection container for managing services

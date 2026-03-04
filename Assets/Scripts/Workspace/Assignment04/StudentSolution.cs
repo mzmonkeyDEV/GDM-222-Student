@@ -6,7 +6,7 @@ using AssignmentSystem.Services;
 using UnityEngine;
 using Debug = AssignmentSystem.Services.AssignmentDebugConsole;
 
-namespace Assignment05
+namespace Assignment04
 {
     public class StudentSolution : MonoBehaviour, IAssignment
     {

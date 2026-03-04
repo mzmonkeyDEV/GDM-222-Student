@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using AssignmentSystem.Services;
 
-namespace Assignment.UI
+namespace Assignment01.UI
 {
     /// <summary>
     /// Custom editor window to display AssignmentDebugConsole output.
