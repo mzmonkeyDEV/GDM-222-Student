@@ -1,6 +1,6 @@
 
 using UnityEngine;
-using UnityEngine.UIElements;
+using System.Collections.Generic;
 
 namespace Solution
 {
@@ -23,20 +23,26 @@ namespace Solution
         public GameObject[] wallsPrefab;
         public GameObject[] demonWallsPrefab;
         public GameObject[] itemsPrefab;
+        public GameObject[] enemyPrefab;
 
         [Header("Set Transform")]
         public Transform floorParent;
         public Transform wallParent;
         public Transform itemPotionParent;
+        public Transform EnemyParent;
 
         [Header("Set object Count")]
         public int obsatcleCount;
         public int itemPotionCount;
+        public int enemyCount = 3;
 
         public Identity[,] mapdata;
+        public List<OOPEnemy> EnemysOnMap = new List<OOPEnemy>();
+
 
         public OOPPlayer playerScript;
         public OOPExit exitScript;
+        public Identity identityScript;
         // block types ...
         [HideInInspector]
         public string empty = "";
@@ -54,6 +60,7 @@ namespace Solution
         // Start is called before the first frame update
         void Start()
         {
+            PlayerScore playerScore = JsonSaveLoadSystem.LoadGame();
             mapdata = new Identity[Rows, Cols];
             for (int x = -1; x < Rows + 1; x++)
             {
@@ -80,9 +87,11 @@ namespace Solution
             GameObject plyer = PlaceObject(0, 0, player.gameObject, null);
             playerScript = plyer.GetComponent<OOPPlayer>();
 
+            playerScript.Name = playerScore.playerName;
+            
             GameObject exit = PlaceObject(Rows-1, Cols-1, Exit.gameObject, null);
             exitScript = exit.GetComponent<OOPExit>();
-
+            
             int count = 0;
 
             int preventInfiniteLoop = 100;
@@ -117,13 +126,44 @@ namespace Solution
                 }
             }
 
+            count = 0;
+            preventInfiniteLoop = 100;
+            while (count < enemyCount)
+            {
+                if (--preventInfiniteLoop < 0) break;
+                int x = Random.Range(0, Rows);
+                int y = Random.Range(0, Cols);
+                if (mapdata[x, y] == null)
+                {
+
+                    int r = Random.Range(0, enemyPrefab.Length);
+                    GameObject g = enemyPrefab[r];
+                    count++;
+                    OOPEnemy enemyScript = PlaceObject(x, y, g, EnemyParent).GetComponent<OOPEnemy>();
+                    EnemysOnMap.Add(enemyScript);
+                }
+            }
+
+
+
         }
 
         public Identity GetMapData(float x, float y)
         {
-            if (x >= Rows || x < 0 || y >= Cols || y < 0) return null;
+            
+            if (x >= Rows || x < 0 || y >= Cols || y < 0)
+            {
+                Debug.Log("Cell" + x + y);
+                return identityScript;
+            } 
             return mapdata[(int)x, (int)y];
         }
+
+        public OOPEnemy[] GetEnemies() {
+            return EnemysOnMap.ToArray();
+
+        }
+
 
         public GameObject PlaceObject(int x, int y,GameObject identity,Transform parrent)
         {

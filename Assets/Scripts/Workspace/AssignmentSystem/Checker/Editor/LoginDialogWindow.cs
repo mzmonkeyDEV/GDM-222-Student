@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
-using Assignment.Core.DI;
-using Assignment.Core.Interfaces;
+using Assignment01.Core.DI;
+using Assignment01.Core.Interfaces;
 
 /// <summary>
 /// Editor window for handling student login to the assignment system

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
-namespace Assignment.UI
+namespace Assignment01.UI
 {
     /// <summary>
     /// Utility class for showing text input dialogs in the editor

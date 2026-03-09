@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEditor;
-using Assignment.Core.Interfaces;
-using Assignment.Core.DI;
+using Assignment01.Core.Interfaces;
+using Assignment01.Core.DI;
 
-namespace Assignment.UI
+namespace Assignment01.UI
 {
     /// <summary>
     /// Refactored editor window for handling student login using the modular architecture

@@ -5,10 +5,10 @@ using System.Text;
 using System.IO;
 using System.Security.Cryptography;
 using Newtonsoft.Json;
-using Assignment;
-using Assignment.Core.DI;
-using Assignment.Core.Interfaces;
-using Assignment.Core;
+using Assignment01;
+using Assignment01.Core.DI;
+using Assignment01.Core.Interfaces;
+using Assignment01.Core;
 
 /// <summary>
 /// API client for the assignment grading system

@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEditor;
-using Assignment.Core.DI;
-using Assignment.Core.Interfaces;
-using Assignment.Core;
-using Assignment;
+using Assignment01.Core.DI;
+using Assignment01.Core.Interfaces;
+using Assignment01.Core;
+using Assignment01;
 
 namespace AssignmentSystem.Services
 {

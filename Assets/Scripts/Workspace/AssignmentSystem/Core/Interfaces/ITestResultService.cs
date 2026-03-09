@@ -1,7 +1,7 @@
 using System;
 using UnityEditor.TestTools.TestRunner.Api;
 
-namespace Assignment.Core.Interfaces
+namespace Assignment01.Core.Interfaces
 {
     /// <summary>
     /// Interface for handling test result operations

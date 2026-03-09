@@ -4,9 +4,9 @@ using UnityEditor.TestTools.TestRunner.Api;
 using UnityEditor;
 using System.Collections.Generic;
 using System;
-using Assignment.Core.Interfaces;
-using Assignment.Core.DI;
-using Assignment;
+using Assignment01.Core.Interfaces;
+using Assignment01.Core.DI;
+using Assignment01;
 
 /// <summary>
 /// Improved assignment menu with modular architecture

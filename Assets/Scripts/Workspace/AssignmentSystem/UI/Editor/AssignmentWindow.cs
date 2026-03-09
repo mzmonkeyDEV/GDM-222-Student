@@ -1,19 +1,19 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 using UnityEditor.TestTools.TestRunner.Api;
 using System.Collections.Generic;
 using System.Linq;
 using System;
-using Assignment.Core.DI;
-using Assignment.Core.Interfaces;
+using Assignment01.Core.DI;
+using Assignment01.Core.Interfaces;
 using AssignmentSystem.Services;
 using System.IO;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using System.Reflection;
-using Assignment.Core;
+using Assignment01.Core;
 
-namespace Assignment.UI
+namespace Assignment01.UI
 {
     public class AssignmentWindow : EditorWindow
     {
@@ -717,7 +717,7 @@ namespace Assignment.UI
             }
         }
 
-        private void OnTestCompleted(Assignment.Core.Interfaces.TestRunCompleteResult result)
+        private void OnTestCompleted(Assignment01.Core.Interfaces.TestRunCompleteResult result)
         {
             isRunningTests = false;
 

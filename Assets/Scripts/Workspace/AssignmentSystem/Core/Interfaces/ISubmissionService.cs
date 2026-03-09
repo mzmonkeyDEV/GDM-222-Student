@@ -1,6 +1,6 @@
 using System;
 
-namespace Assignment.Core.Interfaces
+namespace Assignment01.Core.Interfaces
 {
     /// <summary>
     /// Interface for handling assignment submission operations

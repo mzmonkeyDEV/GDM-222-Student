@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assignment
+namespace Assignment01
 {
     public class Method : MonoBehaviour
     {

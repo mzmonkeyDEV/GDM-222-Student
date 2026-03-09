@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using Assignment.Core.Interfaces;
+using Assignment01.Core.Interfaces;
 
 namespace AssignmentSystem.Services
 {
