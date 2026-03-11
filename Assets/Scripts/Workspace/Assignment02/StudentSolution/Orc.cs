@@ -2,13 +2,8 @@ using UnityEngine;
 
 namespace Assignment02.StudentSolution
 {
-    public class Orc : MeleeEnemy
+    public class Orc
     {
-        public int rageLevel;
 
-        public void Enrage()
-        {
-
-        }
     }
 }

@@ -2,10 +2,8 @@ using UnityEngine;
 
 namespace Assignment02.StudentSolution
 {
-    public class MeleeEnemy : Enemy
+    public class MeleeEnemy
     {
-        public int strength;
 
-        public override void Attack(Entity target) { }
     }
 }

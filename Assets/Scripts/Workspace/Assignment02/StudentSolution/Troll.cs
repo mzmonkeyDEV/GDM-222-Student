@@ -2,12 +2,8 @@ using UnityEngine;
 
 namespace Assignment02.StudentSolution
 {
-    public class Troll : MeleeEnemy
+    public class Troll
     {
-        public int regenerationRate;
-        public void Regenerate()
-        {
 
-        }
     }
 }

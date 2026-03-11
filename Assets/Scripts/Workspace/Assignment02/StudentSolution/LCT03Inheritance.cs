@@ -8,43 +8,25 @@ namespace Assignment02.StudentSolution.LCT03
     {
         public string name;
 
-        public virtual void MakeSound()
+        public void MakeSound()
         {
             Debug.Log($"Animal {name} is making sound");
         }
     }
 
     // class Dog inherits from Animal
-    public class Dog : Animal
+    public class Dog
     {
-        public override void MakeSound()
-        {
-            Debug.Log($"Animal {name} is making sound");
-        }
-        public void walk()
-        {
-            Debug.Log($"Dog {name} is walking");
-        }
-
 
     }
 
     // class Bird inherits from Animal
-    public class Bird : Animal
+    public class Bird
     {
-        public override void MakeSound()
-        {
-            Debug.Log($"Animal {name} is making sound");
-        }
-
-        public void flying()
-        {
-            Debug.Log($"Bird {name} is flying");
-        }
 
     }
 
-    public class LCT03Inheritance : Animal
+    public class LCT03Inheritance
     {
 
         public void Start()
@@ -54,9 +36,6 @@ namespace Assignment02.StudentSolution.LCT03
             // + เรียกใช้ method MakeSound() ของ dog
             // + เรียกใช้ method Walk() ของ dog
             Dog dog = new Dog();
-            dog.name = "Buddy";
-            dog.MakeSound();
-            dog.walk();
 
 
             // 2. สร้าง instance ของ class Bird โดยกำหนดชื่อตัวแปรว่า bird
@@ -64,9 +43,7 @@ namespace Assignment02.StudentSolution.LCT03
             // + เรียกใช้ method MakeSound() ของ bird
             // + เรียกใช้ method Fly() ของ bird
             Bird bird = new();
-            bird.name = "Twitty";
-            bird.MakeSound();
-            bird.flying();
+
         }
     }
 }
